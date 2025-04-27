@@ -1,42 +1,219 @@
-#root {
-  max-width: 1280px;
+/* Adicione ou ajuste em App.css ou similar */
+
+/* Layout Geral */
+.layout-container { /* Adicione esta classe ao div principal em Layout.jsx se quiser limitar a largura */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 1rem;
+}
+
+header {
+  background-color: #343a40; /* Cor escura para o header */
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header nav a {
+  color: #ffffff; /* Texto branco no header */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 1rem; /* Ajuste para alinhar com o container */
+}
+header nav a:hover {
+  color: #adb5bd; /* Cor mais clara no hover */
+}
+
+footer {
+  background-color: #e9ecef; /* Cor clara para o footer */
+  color: #6c757d; /* Texto cinza */
+  padding: 1.5rem 0;
+  margin-top: 3rem;
   text-align: center;
+  font-size: 0.9em;
+  border-top: 1px solid #dee2e6;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+main {
+  min-height: 70vh; /* Garante que o footer fique mais abaixo */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos para BreedCard (opcional, pode ajustar) */
+.breed-card {
+  border: 1px solid #dee2e6;
+  padding: 0; /* Remove padding para a imagem colar nas bordas */
+  margin: 0; /* Removido, usar 'gap' no container flex */
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden; /* Garante que a imagem não saia do border-radius */
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.breed-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.card {
-  padding: 2em;
+.breed-card img {
+  width: 100%;
+  height: 200px; /* Altura fixa para os cards */
+  object-fit: cover; /* Cobre o espaço sem distorcer */
 }
 
-.read-the-docs {
-  color: #888;
+.breed-card-content {
+  padding: 1rem;
 }
+
+.breed-card h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #212529;
+}
+
+.breed-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.breed-card a:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+}
+
+
+/* Estilos para BreedDetailPage */
+.breed-details-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.breed-details-container h1 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #343a40;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Grid responsivo */
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 150px; /* Altura fixa para imagens da galeria */
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  transition: transform 0.2s ease;
+}
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.breed-info h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #495057;
+    font-size: 1.5rem;
+}
+
+.breed-info p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  color: #495057;
+}
+
+.breed-info p strong {
+  color: #343a40;
+  margin-right: 0.5em; /* Espaço depois do negrito */
+}
+
+.breed-info a {
+    font-weight: bold;
+}
+
+/* Ajuste no Layout.jsx para usar a classe container */
+/* Envolva o conteúdo de header, main e footer com <div className="layout-container"> se quiser limitar a largura */
+
+/* Exemplo de como ficaria o Layout.jsx com container */
+/*
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Layout.css'; // Importe o CSS se criou um arquivo separado
+
+const Layout = ({ children }) => {
+  return (
+    <> // Usa Fragment para não adicionar div extra no DOM geral
+      <header>
+        <div className="layout-container"> // Container para limitar largura
+          <nav>
+            <Link to="/">
+              Cat Explorer
+            </Link>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div className="layout-container"> // Container para limitar largura
+          {children}
+        </div>
+      </main>
+      <footer>
+        <div className="layout-container"> // Container para limitar largura
+          <p>Data provided by The Cat API | Enhanced App by [Seu Nome/Apelido]</p>
+        </div>
+      </footer>
+    </>
+  );
+};
+export default Layout;
+*/
+
+/* Ajuste no BreedCard.jsx para usar as classes CSS */
+/*
+import React from 'react';
+import { Link } from 'react-router-dom';
+// import './BreedCard.css'; // Se criar CSS separado
+
+const BreedCard = ({ breed }) => {
+  const imageUrl = breed.image?.url;
+
+  return (
+    <div className="breed-card"> // Usa a classe CSS
+      {imageUrl ? (
+        <img src={imageUrl} alt={breed.name} />
+      ) : (
+         <div style={{ height: '200px', backgroundColor: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#aaa' }}>
+            No Image
+         </div>
+      )}
+      <div className="breed-card-content"> // Div para conteúdo textual
+          <h3>{breed.name}</h3>
+          <Link to={`/breed/${breed.id}`}>
+            View Details
+          </Link>
+      </div>
+    </div>
+  );
+};
+export default BreedCard;
+*/
