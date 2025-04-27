@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const Layout = ({ children }) => {
   return (
     <div>
-      <header style={{ padding: '1rem', backgroundColor: '#f0f0f0', marginBottom: '1rem' }}>
+      <header style={{ padding: '1rem', backgroundColor: '#000000', marginBottom: '1rem' }}>
         <nav>
-          <Link to="/" style={{ marginRight: '1rem', textDecoration: 'none', color: '#333', fontWeight: 'bold' }}>
+          <Link to="/" style={{ marginRight: '1rem', textDecoration: 'none', color: '#fffafa', fontWeight: 'bold' }}>
             Cat Explorer 
           </Link>
         </nav>
