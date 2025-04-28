@@ -22,12 +22,12 @@ Você pode acessar a aplicação online através deste link:
 
 ## Screenshots
 
-**Página Inicial:**
-![Print da Página Inicial](![image](https://github.com/user-attachments/assets/23bf60ea-812c-452c-b482-05c2849961b6)
-) 
-**Página de Detalhes:**
-![Print da Página de Detalhes](![image](https://github.com/user-attachments/assets/fb479f59-b81c-4b9e-943e-450ad2a7678b)
-)
+## Página Inicial:
+![Print da Página Inicial](https://github.com/user-attachments/assets/23bf60ea-812c-452c-b482-05c2849961b6)
+
+## Página de Detalhes:
+![Print da Página de Detalhes](https://github.com/user-attachments/assets/fb479f59-b81c-4b9e-943e-450ad2a7678b)
+
 
 ## Tecnologias Utilizadas
 
