@@ -18,7 +18,7 @@ Aplicação web desenvolvida em React para explorar diferentes raças de gatos u
 
 Você pode acessar a aplicação online através deste link:
 
-[**cat-explorer-fb.netlify.app**] 
+[**cat-explorer-fb.netlify.app** ](https://cat-explorer-fb.netlify.app/)
 
 ## Screenshots
 
